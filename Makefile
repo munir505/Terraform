@@ -5,7 +5,10 @@ terr_apply = "terraform apply -auto-approve -var-file="
 terr_dest = "terraform destroyi -auto-approve"
 
 init:
-	@ssh-keygen
+	@mkdir .ssh
+	@ssh-keygen -N "" -f "id_rsa"
+	@cp ~/is_rsa.pub ~/.ssh
+	@cp ~/is_rsa ~/.ssh
 	@cp ~/Terraform/01_provider.tf ~/
 	@cp ~/Terraform/compute_resource.tf ~/
 	@cp ~/Terraform/config_var.tfvars ~/
