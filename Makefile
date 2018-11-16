@@ -6,6 +6,9 @@ terr_dest = "terraform destroyi -auto-approve"
 
 init:
 	@ssh-keygen
+	@
+	@
+	@
 	@cp ~/Terraform/01_provider.tf ~/
 	@cp ~/Terraform/compute_resource.tf ~/
 	@cp ~/Terraform/config_var.tfvars ~/
