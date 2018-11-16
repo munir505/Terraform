@@ -10,6 +10,7 @@ tags = [
 
 scripts = [
 	"scripts/script", 
-	"scripts/jenkins_script.bash"
+	"scripts/jenkins_script.bash",
+	"scripts/tunnel_config.bash"
 ]
 
