@@ -26,4 +26,6 @@ destroy:
 	@"${terr_dest}"
 
 make_key:
-	@mkdir .gcp
+	@mkdir ~/.gcp
+	@gsutil cp gs://bucket_name/t-rider-219612-fb14af0ed1be.json ~/
+	@mv ~/t-rider-219612-fb14af0ed1be.json ~/.gcp/terraform_key.json
