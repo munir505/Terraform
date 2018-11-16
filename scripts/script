@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo useradd munir
+sudo yum install git -y
+git clone https://github.com/munir505/Go-Server-Service
+cp -r ~/Go-Server-Service/static ~/
+cp ~/Go-Server-Service/Makefile ~/
+cp ~/Go-Server-Service/go-http-server.service ~/
+cp ~/Go-Server-Service/hello ~/
+sudo make
+sudo service go-http-server.service start
