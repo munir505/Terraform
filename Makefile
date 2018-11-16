@@ -1,4 +1,4 @@
-.PHONY = init apply destroy
+.PHONY = init apply destroy make_key
 
 var = "config_var.tfvars"
 terr_apply = "terraform apply -auto-approve -var-file="
@@ -24,3 +24,8 @@ apply:
 
 destroy:
 	@"${terr_dest}"
+
+make_key:
+	@mkdir .gcp
+	@gsutil cp gs://bucket_munir/t-rider-219612-fb14af0ed1be.json ~/
+	@mv ~/t-rider-219612-fb14af0ed1be.json ~/.gcp/terraform_key.json
