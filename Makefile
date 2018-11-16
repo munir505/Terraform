@@ -1,4 +1,4 @@
-.PHONY = init apply destroy make_key
+.PHONY = init apply destroy make_key tunnel
 
 var = "config_var.tfvars"
 terr_apply = "terraform apply -auto-approve -var-file="
@@ -29,3 +29,7 @@ make_key:
 	@mkdir ~/.gcp
 	@gsutil cp gs://bucket_munir/t-rider-219612-fb14af0ed1be.json ~/
 	@mv ~/t-rider-219612-fb14af0ed1be.json ~/.gcp/terraform_key.json
+
+tunnel:
+	@chmod +x tunnel_config.bash
+	@~/Terraform/tunnel_config.bash
