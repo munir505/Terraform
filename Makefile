@@ -2,7 +2,7 @@
 
 var = "config_var.tfvars"
 terr_apply = "terraform apply -auto-approve -var-file="
-terr_dest = "terraform destroyi -auto-approve"
+terr_dest = "terraform destroy -auto-approve"
 
 init:
 	@mkdir .ssh
