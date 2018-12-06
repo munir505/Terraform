@@ -33,3 +33,8 @@ resource "google_compute_instance" "default" {
 		]
 	}
 }
+
+resource "google_compute_attached_disk" "default" {
+	disk = "jenkins-jobs"
+  	instance = "go-server"
+}
