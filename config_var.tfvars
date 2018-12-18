@@ -9,5 +9,7 @@ tags = [
 ]
 
 scripts = [
-        "scripts/jenkins_script.bash"
+        "scripts/jenkins_script.bash",
+	"scripts/install_go.bash",
+	"scripts/install_docker.bash"
 ]
