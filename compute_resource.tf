@@ -23,19 +23,9 @@ resource "google_compute_instance" "default" {
                 private_key = "${file("~/.ssh/id_rsa")}"
         }
         provisioner "remote-exec" {
-                inline = [
-                        "echo Hello World"
-                ]
-        }
-        provisioner "remote-exec" {
                 scripts = [
                         "${var.scripts}"
                 ]
         }
 }
 
-resource "google_compute_attached_disk" "default" {
-        zone = "${var.zone}"
-        disk = "jenkins-jobs"
-        instance = "${google_compute_instance.default.self_link}"
-}
